@@ -65,5 +65,19 @@ public class Main {
         double F = sc.nextInt();
     // 1008번
         System.out.println(E/F);
+    
+    // 10171번
+        System.out.println("\\    /\\");
+        System.out.println(" )  ( ')");
+        System.out.println("(  /  )");
+        System.out.println(" \\(__)|");
+
+    // 10172번
+        System.out.println("|\\_/|");
+        System.out.println("|q p|   /}");
+        System.out.println("( 0 )\"\"\"\\");
+        System.out.println("|\"^\"`    |");
+        System.out.println("||_/=\\\\__|");
+        
 	}
 }
