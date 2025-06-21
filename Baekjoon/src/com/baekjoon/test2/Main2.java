@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main2 {
 
@@ -80,6 +81,48 @@ public class Main2 {
             System.out.println("4");
         }
 
+        // 2884번
+        int h = sc.nextInt();
+        int m = sc.nextInt();
+        sc.close();
+        if(h >= 0 && h <= 23 && m >= 0 && m <= 59){
+            if(m < 45){
+            h--;
+            m = 60 - (45 - m);
+                if(h < 0){
+                    h = 23;
+                }
+                System.out.println(h + " " + m);
+            }else{
+                System.out.println(h + " " + (m - 45));
+            }
+        }
+
+        // 2525번
+        int a1 = sc.nextInt();
+        int b1 = sc.nextInt();
+        int c1 = sc.nextInt();
+        sc.close();
+        int min = a1 * 60 + b1 + c1;
+        int hour = min/60%24;
+        int minute = min % 60;
+
+        if(a1 >= 0 && a1 <= 23 && b1 >= 0 && b1 <= 59 && c1 >= 0 && c1 <= 1000){
+            System.out.println(hour + " " + minute);
+        }
+
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int a2 = Integer.parseInt(st.nextToken());
+        int b2 = Integer.parseInt(st.nextToken());
+        int c2 = Integer.parseInt(br.readLine());
+        sc.close();
+        int min2 = a2 * 60 + b2 + c2;
+        int hour2 = min2/60%24;
+        int minute2 = min2 % 60;
+
+        if(a1 >= 0 && a1 <= 23 && b1 >= 0 && b1 <= 59 && c1 >= 0 && c1 <= 1000){
+            System.out.println(hour2 + " " + minute2);
+        }
 
 	}
 
