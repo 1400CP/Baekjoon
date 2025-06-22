@@ -124,6 +124,43 @@ public class Main2 {
             System.out.println(hour2 + " " + minute2);
         }
 
-	}
+        // 2480번
+        sc.close();
+        int prize = 0;
+        if(a2>=1 && a2<=6 && b2>=1 && b2<=6 && c2>=1 && c2<=6){
+            if(a2==b2&&b2==c2){
+                prize = 10000 + (a2*1000);
+            }else if(a2==b2||a2==c2){
+                prize = 1000 + (a2*100);
+            }else if(b2==c2){
+                prize = 1000 + (b2*100);
+            }else{
+                int max = Math.max(a2, Math.max(b2, c2));
+                prize = max*100;
+            }
+            System.out.println(prize);
+        }
+
+        BufferedReader br2 = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st2 = new StringTokenizer(br2.readLine());
+
+        int a3 = Integer.parseInt(st2.nextToken());
+        int b3 = Integer.parseInt(st2.nextToken());
+        int c3 = Integer.parseInt(st2.nextToken());
+        int price = 0;
+
+        if(a3==b3&&b3==c3){
+            price = 10000 + (a3*1000);
+        }else if(a3==b3||a3==c3){
+            price = 1000 + (a3*100);
+        }else if(b3==c3){
+            price = 1000 + (b3*100);
+        }else{
+            int max = Math.max(a3, Math.max(b3, c3));
+            price = max*100;
+        }
+        System.out.println(price);
+
+    }
 
 }
