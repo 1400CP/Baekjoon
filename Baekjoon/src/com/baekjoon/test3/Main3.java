@@ -1,8 +1,11 @@
 package com.baekjoon.test3;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Main3 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         // 2739번
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
@@ -34,5 +37,18 @@ public class Main3 {
         for(int j:arr){
             System.out.println(j);
         }
+
+        // 8393번 -2
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] str = br.readLine().split(" ");
+        int a2 = Integer.parseInt(str[0]);
+        int sum = 0;
+
+        for(int i=1; i<=a2 ; i++){
+            sum+=i;
+        }
+        System.out.println(sum);
+
+
     }
 }
