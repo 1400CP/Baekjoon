@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main3 {
     public static void main(String[] args) throws IOException{
@@ -49,6 +50,60 @@ public class Main3 {
         }
         System.out.println(sum);
 
+        // 25304번
+        int X = sc.nextInt();
+        int N = sc.nextInt();
+        int sum = 0;
 
+        for(int i=1; i<=N; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            sum += a * b;
+        }
+        sc.close();
+        
+        if(sum == X){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+
+        // 25304 - 2
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int X = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+        int sum = 0;
+
+        for(int i=1; i<=N; i++){
+            String[] str = br.readLine().split(" ");
+            int a = Integer.parseInt(str[0]);
+            int b = Integer.parseInt(str[1]);
+            sum += a * b;
+        }
+
+        if(sum == X){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
+
+        // 25304 - 3
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int X = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+        int sum = 0;
+
+        for(int i=1; i<=N; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine()," ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sum += a * b;
+        }
+
+        if(sum == X){
+            System.out.println("Yes");
+        }else{
+            System.out.println("No");
+        }
     }
 }
