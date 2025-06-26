@@ -105,5 +105,25 @@ public class Main3 {
         }else{
             System.out.println("No");
         }
-    }
+
+        // 25314번 -1
+        int a = sc.nextInt();
+        sc.close();
+        for(int i=1; i<=a/4; i++){
+            System.out.printf("long ");
+        }
+        System.out.println("int");
+        
+        // 25314번 -2
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(br.readLine());
+
+        for(int i=1; i<=a/4; i++){
+            System.out.printf("long ");
+        }
+        System.out.println("int");
+
+        
+
+    }    
 }
