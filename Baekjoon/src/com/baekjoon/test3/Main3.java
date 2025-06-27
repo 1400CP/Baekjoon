@@ -1,7 +1,9 @@
 package com.baekjoon.test3;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -123,7 +125,55 @@ public class Main3 {
         }
         System.out.println("int");
 
+        // 15552번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
+
+        for(int i=1; i<=N; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            bw.write(a+b);
+        }
+        br.close();
+        bw.flush();
+        bw.close();
+
+        // 11024
+        for(int i=1; i<=T; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+                if(a>0 && b<10){
+                    bw.write("Case #"+ i +": " + (a+b) + "\n");
+                }
+        }
+        br.close();
+        bw.flush();
+        bw.close();
+
+        // 11022
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int T = Integer.parseInt(br.readLine());
         
+        for(int i=1; i<=T; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            if(a>0 && b<10){
+                bw.write("Case #" + i +": " + a + " + " + b + " = " +(a+b) + "\n");
+            }
+        }
+        br.close();
+        bw.flush();
+        bw.close();
+
+        // 2438
+        
+
 
     }    
 }
