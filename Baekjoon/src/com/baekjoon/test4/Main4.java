@@ -40,7 +40,31 @@ public class Main4 {
             bw.close();
         }
 
+        // 10871
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        int N = Integer.parseInt(st.nextToken());
+        int X = Integer.parseInt(st.nextToken());
+
+        if(N>=1 && N<=10000 && X>=1 && X<=10000){
+            st = new StringTokenizer(br.readLine(), " ");
+
+            for(int i=0; i<N; i++){
+                int a = Integer.parseInt(st.nextToken());
+                if(a<X){
+                    bw.write(a+" ");
+                }
+            }
+
+            br.close();
+            bw.flush();
+            bw.close();
+        }
+
         
+
         
     }
 }
