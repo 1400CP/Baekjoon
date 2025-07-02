@@ -63,7 +63,52 @@ public class Main4 {
             bw.close();
         }
 
-        
+        // 10818
+        int N = Integer.parseInt(br.readLine());
+
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+
+        int[] arr = new int[N];
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int min = arr[0];
+        int max = arr[0];
+
+        for(int i=0; i<arr.length; i++){
+            if(arr[i]<min){
+                min = arr[i];
+            }
+            if(arr[i]>max){
+                max = arr[i];
+            }
+        }
+        System.out.print(min + " " + max);
+
+        br.close();
+        bw.flush();
+        bw.close();
+
+        // 2562
+        int[] arr = new int[9];
+
+        int max = arr[0];
+        int count = 0;
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = Integer.parseInt(br.readLine());
+            if(arr[i] > max){
+                max = arr[i];
+                count = i+1;
+            }
+        }
+
+        br.close();
+        System.out.println(max);
+        System.out.println(count);
+
 
         
     }
