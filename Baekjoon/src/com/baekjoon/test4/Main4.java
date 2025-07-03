@@ -109,7 +109,31 @@ public class Main4 {
         System.out.println(max);
         System.out.println(count);
 
+        // 10810
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+
+        for(int i=0; i<M; i++){
+            st = new StringTokenizer(br.readLine(), " ");
+
+            int F = Integer.parseInt(st.nextToken());
+            int S = Integer.parseInt(st.nextToken());
+            int B = Integer.parseInt(st.nextToken());
+
+            for(int j=F; j<=S; j++){
+                arr[j-1] = B;
+            }
+        }
+
+        for(int i=0; i<arr.length; i++){
+            System.out.print(arr[i]+ " ");
+        }
+
+        // 
         
     }
 }
