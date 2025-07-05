@@ -133,7 +133,37 @@ public class Main4 {
             System.out.print(arr[i]+ " ");
         }
 
-        // 
+        // 10813
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int N = Integer.parseInt(st.nextToken()); // N번 바구니 입력
+        int[] arr = new int[N];
+        int M = Integer.parseInt(st.nextToken()); // M번 변경 입력
+        int I, J, temp = 0;
+        
+        for(int i=0; i<N; i++){ // 첫 바구니 배열 입력
+            arr[i] = i+1;
+        }
+        
+        for(int i=0; i<M; i++){ // ex: 4번 변경 입력 for문
+            st = new StringTokenizer(br.readLine());
+            I = Integer.parseInt(st.nextToken()); // i값 받기
+            J = Integer.parseInt(st.nextToken()); // j값 받기
+            temp = arr[I-1]; // 변경하기 위해 i 바구니값을 임시 저장소에 넘김
+            arr[I-1] = arr[J-1]; // 배열에 -1을 준 것은 배열이 0값부터 시작해야 하기 때문임.
+            // 조건, 1 <= i <= j <= N
+            // arr[i]에 arr[j]값이 들어감.
+            arr[J-1] = temp; // 임시 저장소의 값이 변경되도록 값을 줌
+            // arr[j]에 arr[i]값이 들어감.
+        }
+        
+        for(int i=0; i<arr.length; i++){ // 마지막으로 출력
+            System.out.print(arr[i]+ " ");
+        }
+        br.close();
+
+        
+
         
     }
 }
