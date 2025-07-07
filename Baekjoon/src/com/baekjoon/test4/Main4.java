@@ -162,8 +162,21 @@ public class Main4 {
         }
         br.close();
 
+        // 5597번 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] arr = new int[31]; // 전체 학생 수
         
+        for(int i=1; i<29; i++){ // 28명 출석 인원
+            int a = Integer.parseInt(br.readLine());
+            arr[a] = 1; // 28명 배열값을 1로 고정
+        }
 
-        
+        for(int i=1; i<arr.length; i++){ // 30명 중 28명 출력
+            if(arr[i] != 1){ // 배열값에서 1을 뺀 나머지 2명 출력
+                System.out.println(i); // 배열 i값을 통해서 a에서 주어진 출석번호 출력
+            }
+        }
+        br.close();
+
     }
 }
