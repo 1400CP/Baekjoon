@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.HashSet;
 import java.util.StringTokenizer;
 
 public class Main4 {
@@ -177,6 +178,43 @@ public class Main4 {
             }
         }
         br.close();
+
+        // 3052번 1)
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] arr = new int[10];
+        boolean bl;
+        int count = 0;
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = Integer.parseInt(br.readLine())%42;
+        }
+
+        for(int i=0; i<arr.length; i++){
+            bl = false;
+            for(int j=i+1; j<arr.length; j++){
+                if(arr[i] == arr[j]){
+                    bl = true;
+                    break;
+                }
+            }
+            if(bl==false){
+                count++;
+            }
+        }
+        br.close();
+        System.out.println(count);
+
+        // 3052번 2)HashSet
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int i = 0; i < 10; i++) {
+            set.add(Integer.parseInt(br.readLine())%42);
+        }
+        br.close();
+        System.out.println(set.size());
 
     }
 }
