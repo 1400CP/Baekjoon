@@ -216,5 +216,62 @@ public class Main4 {
         br.close();
         System.out.println(set.size());
 
+        // 10811번 for문
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine()); // 행으로 처리
+
+        int N = Integer.parseInt(st.nextToken()); // 행으로 처리하기 위함
+        int M = Integer.parseInt(st.nextToken()); // 행으로 처리하기 위함
+        int[] arr = new int[N]; // 배열을 나타내기 위함
+        int temp = 0; // 순서를 바꾸기 위한 임시공간
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = i+1; // 숫자 순서대로 배열처리
+        }
+
+        for(int i=0; i<M; i++){ // 바구니 교환이 M번 교환하도록
+            st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken())-1; // 배열 0번부터 입력하기 위한 -1
+            int b = Integer.parseInt(st.nextToken())-1; // 상동
+
+            for(int j=a; j<=b; j++){ // a바구니로 시작, b바구니까지 교환하도록 for문을 형성
+                temp = arr[a]; // a바구니를 임시공간으로 
+                arr[a++] = arr[b]; //a바구니++의 값이 b바구니값과 같도록
+                arr[b--] = temp; // b바구니--의 값이 임시공간으로
+            }
+        }
+
+        for(int i=0; i<arr.length; i++){
+            System.out.print(arr[i] + " "); // 출력
+        }
+
+        // 10811번 while문
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+        int temp;
+
+        for(int i=0; i<arr.length; i++){
+            arr[i] = i+1;
+        }
+
+        for(int i=0; i<M; i++){
+            st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken())-1;
+            int b = Integer.parseInt(st.nextToken())-1;
+
+            while(a<b){ // 교환하는 과정을 while문으로 처리
+                temp = arr[a];
+                arr[a++] = arr[b];
+                arr[b--] = temp;
+            }
+        }
+
+        for(int i=0; i<arr.length; i++){
+            System.out.print(arr[i] + " ");
+        }
+
+        
+
     }
 }
