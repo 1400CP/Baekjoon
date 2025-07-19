@@ -271,7 +271,24 @@ public class Main4 {
             System.out.print(arr[i] + " ");
         }
 
+        // 1546번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
         
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int max = 0;
+        
+        double sum = 0;
+        
+        for(int i=0; i<N; i++){
+            int value = Integer.parseInt(st.nextToken());
+            if(value > max){
+                max = value;
+            }
+            sum += value;
+        }
+        br.close();
+        System.out.print(((sum / max) * 100) / N);
 
     }
 }
