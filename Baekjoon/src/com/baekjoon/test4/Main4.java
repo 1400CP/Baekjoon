@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.StringTokenizer;
 
@@ -271,24 +272,42 @@ public class Main4 {
             System.out.print(arr[i] + " ");
         }
 
-        // 1546번
+        // 1546번 -1
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine()); // 과목 수
         
         StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-        int max = 0;
+        int max = 0; // 가장 큰 값, 초기화
         
-        double sum = 0;
+        double sum = 0; // 더할 값, 초기화
         
-        for(int i=0; i<N; i++){
-            int value = Integer.parseInt(st.nextToken());
-            if(value > max){
+        for(int i=0; i<N; i++){ // 조작 성적표 배열
+            int value = Integer.parseInt(st.nextToken()); // 배열에서 더할 값 초기화
+            if(value > max){ // 가장 큰 값을 밸류로 설정
                 max = value;
             }
-            sum += value;
+            sum += value; // 일반 성적과 가장 큰 값을 더한 값을 구함
         }
         br.close();
         System.out.print(((sum / max) * 100) / N);
+
+        // 1546번 -2
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine()); // 과목 수
+        double[] arr = new double[N]; // 성적표
+        double sum = 0; // 더할 점수
+        
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        
+        for(int i=0; i<N; i++){
+            arr[i] = Double.parseDouble(st.nextToken()); // 받은 점수
+        }
+        
+        Arrays.sort(arr); // 성적순으로 나열
+        for(int i=0; i<N; i++){ // 사기 점수 값으로 더한 값으로 배열
+            sum += ((arr[i] / arr[N-1])*100);
+        }
+        System.out.print(sum / N); // 사기 점수를 N(과목 수)으로 나눠서 출력
 
     }
 }
