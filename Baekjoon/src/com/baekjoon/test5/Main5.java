@@ -1,7 +1,19 @@
 package com.baekjoon.test5;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
 public class Main5 {
     public static void main(String[] args){
+        // 27866번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String S = br.readLine(); // 글자 주어짐
+        int I = Integer.parseInt(br.readLine()); // 출력할 단어 번호
         
+        System.out.print(S.charAt(I-1)); // 0번부터 시작하기 때문에 -1 추가
+        // charAt 메소드를 통해 글자 추출.
+
+        
+
     }
 }
