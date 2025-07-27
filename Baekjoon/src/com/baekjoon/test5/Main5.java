@@ -30,6 +30,14 @@ public class Main5 {
         }
         br.close();
 
+        // 11654번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        int i = (int)s.charAt(0);
+        br.close();
+        
+        System.out.println(i);
+
         
 
     }
