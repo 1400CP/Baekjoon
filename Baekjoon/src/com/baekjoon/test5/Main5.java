@@ -13,6 +13,12 @@ public class Main5 {
         System.out.print(S.charAt(I-1)); // 0번부터 시작하기 때문에 -1 추가
         // charAt 메소드를 통해 글자 추출.
 
+        // 2743번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String s = br.readLine();
+        
+        System.out.println(s.length());
+
         
 
     }
