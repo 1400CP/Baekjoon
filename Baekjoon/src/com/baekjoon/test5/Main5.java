@@ -38,6 +38,29 @@ public class Main5 {
         
         System.out.println(i);
 
+        // 11720번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine()); // n개의 값의 합을 출력할 숫자.
+        String[] s = br.readLine().split(""); // 배열값.
+        
+        int sum = 0; // int sum; 으로 입력할 경우 지정값이 없으므로 향상문에서 += 를 적용 못함.
+        
+        for(int i=0; i<n; i++){
+            sum += Integer.parseInt(s[i]); // n개의 값을 합하여 sum값에 더함.
+        }
+        br.close();
+        System.out.println(sum); // 최종적으로 더해진 값을 출력.
+
+        // 10809번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder(); // 객체 선언. append() 메소드로 추가.
+        String s = br.readLine(); // 단어 명사.
+        
+        for(char c = 'a'; c <= 'z'; c++){
+            sb.append(s.indexOf(c) + " "); // indexOf() 메소드로 단어 명사 검색.
+        }
+        
+        System.out.print(sb);
         
 
     }
