@@ -81,7 +81,11 @@ public class Main5 {
         }
         br.close(); // 이걸로 br.readLine()의 마지막을 닫음. 먼저 쓰면 향상문 1번으로 끝이 나버림.
 
-        // 
+        // 1152번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " "); // Tokenizer 사용법
+        
+        System.out.println(st.countTokens()); // countTokens()로 세는 법 알아두기.
 
     }
 }
