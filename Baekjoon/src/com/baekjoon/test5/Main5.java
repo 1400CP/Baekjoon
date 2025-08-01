@@ -61,7 +61,27 @@ public class Main5 {
         }
         
         System.out.print(sb);
-        
+
+        // 2675번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine()); // 테스트 케이스 개수
+               
+        for(int i=0; i<T; i++){ // 반복회수
+            String[] arr = br.readLine().split(" ");
+            
+            int a = Integer.parseInt(arr[0]); // 케이스 반복 횟수
+            String s = arr[1]; // 문자열 s
+            
+            for(int j=0; j<s.length(); j++){ // 문자열 횟수
+                for(int k=0; k<a; k++){ // 단어 반복 횟수
+                    System.out.print(s.charAt(j)); // 출력 단어 찾기 및 단어 반복 횟수 먼저
+                }
+            }
+            System.out.println(); // 이게 없으면 int i 향상문 출력이 안 됨
+        }
+        br.close(); // 이걸로 br.readLine()의 마지막을 닫음. 먼저 쓰면 향상문 1번으로 끝이 나버림.
+
+        // 
 
     }
 }
