@@ -123,5 +123,60 @@ public class Main5 {
         
         System.out.println(a>b?a:b); // 삼항 연산자로 첫번째 숫자가 나오도록 함
 
+        // 5622번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String s = br.readLine(); // 주어지는 단어
+        // ABC, DEF, GHI, JKL, MNO, PQRS, TUV, WXYZ, OPERATOR
+        int count = 0; // 더할 시간
+        
+        int k = s.length(); // 단어의 길이(더할 시간 계산)
+        
+        for(int i=0; i<k; i++){ // 향상문으로 단어 길이와 단어를 찾음
+            switch(s.charAt(i)){ // 단어의 case로 더할 숫자를 추가
+                case 'A' : case 'B' : case 'C' : // 각 케이스를 줄여서 이렇게 사용
+                    count += 3;
+                    break;
+                case 'D' : case 'E' : case 'F' :
+                    count += 4;
+                    break;
+                case 'G' : case 'H' : case 'I' :
+                    count += 5;
+                    break;
+                case 'J' : case 'K' : case 'L' :
+                    count += 6;
+                    break;
+                case 'M' : case 'N' : case 'O' :
+                    count += 7;
+                    break;
+                case 'P' : case 'Q' : case 'R' : case 'S' :
+                    count += 8;
+                    break;
+                case 'T' : case 'U' : case 'V' :
+                    count += 9;
+                    break;
+                case 'W' : case 'X' : case 'Y' : case 'Z' :
+                    count += 10;
+                    break;
+            }
+        }
+        System.out.println(count); // 카운트를 출력
+
+        // 11718번-1
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String s = ""; // 입력받을 문자
+        
+        while((s = br.readLine()) != null){ // null이 아닐 경우 무한 반복
+            System.out.println(s); // 그대로 출력
+        }
+
+        // 11718번-2(for문 사용 불가)
+        String s = ""; // 입력받을 문자
+
+        for(int i=0; i<100; i++){ // 컴파일 에러 발생
+            String s = br.readLine(); // for문으로 int i값을 br.readLine()에 줄 수 없음
+            System.out.println(s); // 그대로 출력
+        }
     }
 }
