@@ -76,6 +76,16 @@ public class Main6 {
         System.out.print(sb);
 
         //10988번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringBuilder sb = new StringBuilder(str);
+        if(str.equals(sb.reverse().toString())){
+                System.out.println(1);
+        }else{
+                System.out.println(0);
+        }
+        br.close();
+
         
 
     }
