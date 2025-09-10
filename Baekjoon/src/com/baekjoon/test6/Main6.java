@@ -139,5 +139,48 @@ public class Main6 {
         br.close();
         System.out.println(answer);
 
+        // 2941번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();     // 크로아티아 알파벳 문자 만들기
+        int count = 0;      1           // 출력용 숫자
+        int len = str.length();         // 수식 줄이기용
+        
+        for(int i=0; i<len; i++){       // 향상문으로 단어 알파벳 확인
+            char ch = str.charAt(i);    // 단어확인
+            if(ch == 'c'){              // 크로아티아 하나씩 확인
+                if(i+1 < len && str.charAt(i+1) == '='){        // i+1 < len, 마지막 인덱스 범위체크
+                    i++;
+                }else if(i+1 < len && str.charAt(i+1) == '-'){
+                    i++;
+                }
+            }else if(ch == 'd'){
+                if(i+2 < len && str.charAt(i+1) == 'z' && str.charAt(i+2) == '='){
+                    i+=2;
+                }else if(i+1 < len && str.charAt(i+1) == '-'){
+                    i++;
+                }
+            }else if(ch == 'l'){
+                if(i+1 < len && str.charAt(i+1) == 'j'){
+                    i++;
+                }
+            }else if (ch == 'n'){
+                if(i+1 < len && str.charAt(i+1) == 'j'){
+                    i++;
+                }
+            }else if(ch == 's'){
+                if(i+1 < len && str.charAt(i+1) == '='){
+                    i++;
+                }
+            }else if(ch == 'z'){
+                if(i+1 < len && str.charAt(i+1) == '='){
+                    i++;
+                }
+            }
+            count++;    // 마지막에 해당 하는 조건에 맞는 걸 count++ 해서 출력
+        }
+        System.out.println(count);
+
+        // 1316번
+
     }
 }
