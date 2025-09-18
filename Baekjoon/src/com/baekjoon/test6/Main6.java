@@ -181,6 +181,127 @@ public class Main6 {
         System.out.println(count);
 
         // 1316번
+        static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    
+        public static void main(String[] args) throws IOException{
+            int alpha = Integer.parseInt(br.readLine());
+            int count = 0;
+            for(int i=0; i<alpha; i++){
+                if(check() == true){
+                    count++;
+                }
+            }
+            System.out.println(count);
+        }
+    
+        public static boolean check() throws IOException{
+            boolean[] check = new boolean[26];
+            int prev = 0;
+            String str = br.readLine();
+            
+            for(int i=0; i<str.length(); i++){
+                int now = str.charAt(i);
+                
+                if(prev != now){
+                    if(check[now - 'a'] == false){
+                        check[now - 'a'] = true;
+                        prev = now;
+                    }else{
+                        return false;
+                    }
+                }else{
+                    continue;
+                }
+            }
+            return true;
+        }
+
+        // 25206
+        // 1) switch case 실패버전
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        double result = 0;
+        double result_sum = 0;
+        char c;
+
+        for(int i=0; i<20; i++){
+            double credit = 0;
+            double grade = 0;
+
+            String arr[] = br.readLine().split(" ");
+            credit += Double.parseDouble(arr[1]);
+            c = arr[2].charAt(0);
+
+            switch(c){
+                case 'A':
+                    if(arr[2].charAt(1)){
+                        grade += 4.5;
+                    }else{
+                        grade += 4.0;
+                    }
+                    break;
+                case 'B':
+                    if(arr[2].charAt(1)){
+                        grade += 3.5;
+                    }else{
+                        grade += 3.0;
+                    }
+                    break;
+                case 'C':
+                    if(arr[2].charAt(2)){
+                        grade += 2.5;
+                    }else{
+                        grade += 2.0;
+                    }
+                    break;
+                case 'D':
+                    if(arr[2].charAt(2)){
+                        grade += 1.5;
+                    }else{
+                        grade += 1.0;
+                    }
+                    break;
+                case 'F':
+                    grade += 0;
+                    break;
+                case 'P':
+                    grade += 0;
+                    credit = 0;
+                    break;
+            }
+            result_sum += credit;
+            result += credit*grade;
+        }
+        br.close();
+        System.out.println(result/result_sum);
+
+        // 2) for문
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String[] resultList = {"A+", "A0", "B+", "B0", "C+", "C0", "D+", "D0", "F", "P"};
+        double[] gradeList = {4.5, 4.0, 3.5, 3.0, 2.5, 2.0, 1.5, 1.0, 0.0};
+
+        double totalSum = 0;
+        double scoreSum = 0;
+
+        for(int i=0; i<20; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            String subject = st.nextToken();
+            double score = Double.parseDouble(st.nextToken());
+            String grade = st.nextToken();
+
+            for(int j=0; j<10; j++){
+                if(grade.equals(resultList[j])){
+                    if(grade.equals("P")){
+                        break;
+                    }
+                    totalSum += score * gradeList[j];
+                    scoreSum += score;
+                    break;
+                }
+            }
+        }
+        br.close();
+        double average = totalSum / scoreSum;
+        System.out.println(average);
 
     }
 }
