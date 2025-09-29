@@ -63,7 +63,32 @@ public class Main{
         System.out.println(x+" "+y);
 
         // 10798번
-        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[][] arr = new char[5][15]; // 한줄 단어가 최대 15글자
+        int max = 0; // 공백도 계산하기 위한 단어 max 넣기
+
+        for(int i=0; i<5; i++){
+            String str = br.readLine(); //
+
+            if(str.length()>max){
+                max = str.length();
+            }
+            for(int j=0; j<str.length(); j++){
+                arr[i][j] = str.charAt(j); // 열단어 추출
+            }
+        }
+
+        for(int i=0; i<max; i++){
+            for(int j=0; j<5; j++){
+                if(arr[j][i] == '\0'){ // 공백표시
+                    continue; // 이어서 계산
+                }
+                System.out.print(arr[j][i]); // 열부터 더해서 배열 추출
+            }
+        }
+        System.out.println(); // 다음 줄을 위한 공백
+        br.close();
+
 
     }
 }
