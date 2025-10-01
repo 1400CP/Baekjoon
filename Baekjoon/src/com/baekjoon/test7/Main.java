@@ -89,6 +89,31 @@ public class Main{
         System.out.println(); // 다음 줄을 위한 공백
         br.close();
 
+        // 2563번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        int count = Integer.parseInt(br.readLine());
+        int[][] white = new int[100][100];
+        
+        for(int i=0; i<count; i++){
+            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            for(int j=0; j<x+10; j++){
+                for(int k=0; k<y+10; k++){
+                    white[k][j] = 1;
+                }
+            }
+        }
+
+        int resist = 0;
+        for(int i=0; i<100; i++){
+            for(int j=0; j<100; j++){
+                if(white[i][j] == 1){
+                    resist += white[i][j];
+                }
+            }
+        }
+        System.out.println(resist);
     }
 }
