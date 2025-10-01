@@ -92,28 +92,28 @@ public class Main{
         // 2563번
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int count = Integer.parseInt(br.readLine());
-        int[][] white = new int[100][100];
+        int count = Integer.parseInt(br.readLine()); // 검은색 종이 수
+        int[][] white = new int[100][100]; // 하얀색 종이 넓이
         
-        for(int i=0; i<count; i++){
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-            int x = Integer.parseInt(st.nextToken());
-            int y = Integer.parseInt(st.nextToken());
-            for(int j=0; j<x+10; j++){
-                for(int k=0; k<y+10; k++){
-                    white[k][j] = 1;
+        for(int i=0; i<count; i++){ // 검은색 종이 반복문
+            StringTokenizer st = new StringTokenizer(br.readLine(), " "); // 입력(열)
+            int x = Integer.parseInt(st.nextToken()); // 가로
+            int y = Integer.parseInt(st.nextToken()); // 세로
+            for(int j=0; j<x+10; j++){ // 가로 변 계산시 +10
+                for(int k=0; k<y+10; k++){ // 세로 변 계산시 +10
+                    white[k][j] = 1; // 하얀색 종이 넓이에서 변이 올바른지 계산하기 위함
                 }
             }
         }
 
-        int resist = 0;
-        for(int i=0; i<100; i++){
-            for(int j=0; j<100; j++){
-                if(white[i][j] == 1){
-                    resist += white[i][j];
+        int resist = 0; // 넓이 합산용
+        for(int i=0; i<100; i++){ // 가로
+            for(int j=0; j<100; j++){ // 세로
+                if(white[i][j] == 1){ // 계산이 맞는 경우
+                    resist += white[i][j]; // 넓이 합산을 계속한다
                 }
             }
         }
-        System.out.println(resist);
+        System.out.println(resist); // 넓이 합산된 것을 출력
     }
 }
