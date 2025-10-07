@@ -37,5 +37,16 @@ public class Main{
         System.out.println(result); // 이게 N의 B 제곱으로 인식하면서 for 향상문 등 다 생략되나봐요.
 
         //11005
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        
+        int N = Integer.parseInt(st.nextToken()); // 10진법 N
+        int B = Integer.parseInt(st.nextToken()); // 알파벳 대문자(숫자로 표현)
+        
+        String result = Integer.toString(N, B).toUpperCase(); // 결과값이 대문자로 나와야 하기 때문
+        System.out.println(result);
+
+        //2720
+        
     }
 }
