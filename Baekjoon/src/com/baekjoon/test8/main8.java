@@ -46,7 +46,57 @@ public class Main{
         String result = Integer.toString(N, B).toUpperCase(); // 결과값이 대문자로 나와야 하기 때문
         System.out.println(result);
 
-        //2720
+        //2720_1
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
+        int A = Integer.parseInt(br.readLine());
+        for(int i=0; i<A; i++){
+            int C = Integer.parseInt(br.readLine());
+            int Q = 0; // 쿼터
+            int D = 0; // 다임
+            int N = 0; // 니켈
+            int P = 0; // 페니
+
+            if(25 <= C){
+                Q += (C/25);
+                C = C%25; // 거슬러야 할 돈 계산
+            }
+            if(10 <= C){
+                D += (C/10);
+                C = C%10;
+            }
+            if(5 <= C){
+                N += (C/5);
+                C = C%5;
+            }
+            if(1 <= C){
+                P = C;
+            }
+
+            System.out.println(Q + " " + D + " " + N + " " + P);
+        }
+        br.close();
+
+        //2720_2(간단화)
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int A = Integer.parseInt(br.readLine()); // 테스트 케이스 수
+        for (int i = 0; i < A; i++) { // 테스트 개수만큼 향상문 설정
+            int C = Integer.parseInt(br.readLine()); // 거슬러 줄 금액
+            int Q = C / 25; // 쿼터
+            C %= 25; // 테스트 케이스 남김
+            int D = C / 10; // 다임
+            C %= 10; // 테스트 케이스 남김
+            int N = C / 5; // 니켈
+            C %= 5; // 테스트 케이스 남김
+            int P = C; // 페니, 숫자 1이기 때문에 동등
+
+            System.out.println(Q + " " + D + " " + N + " " + P);
+        }
+
+        br.close();
+
+        // 2903
+
     }
 }
