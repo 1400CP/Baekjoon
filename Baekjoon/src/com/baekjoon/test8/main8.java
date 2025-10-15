@@ -96,7 +96,31 @@ public class Main{
 
         br.close();
 
-        // 2903
+        // 2903_1번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        
+        int result = 2;
+        
+        for(int i=0; i<N; i++){
+            result = (result + (result-1));            
+        }
+        System.out.println(result * result);
+        br.close();
 
+        // 2903_2번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        
+        int result = 2;
+        
+        for(int i=0; i<N; i++){
+            result = (result + (result-1));            
+        }
+        System.out.println((int)Math.pow(result, 2)); // 제곱 공식을 적용
+        br.close();
+
+        // 2292번
+        
     }
 }
