@@ -121,6 +121,25 @@ public class Main{
         br.close();
 
         // 2292번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine()); // 주어지는 수
         
+        int room = 1; // 방의 정적 수
+        int count = 2; // 지나가는 방의 정적 수 
+        
+        if(N == 1){ // 주어지는 수가 1일 때
+           System.out.println(1); // N값이 1이기 때문에 무조건 1이 출력
+        }else{
+           while(count <= N){ // 지나가는 방이 2 이상이 될 경우
+              count = count + (6 * room); // 숫자가 2 이상이 되고, 6의 배수가 되기 때문에 다음과 같음
+              room++; // 최소 방의 개수는 6의 배수로 계산됨.
+           }
+           System.out.println(room); // 최소 방의 개수 출력.
+        }
+        br.close();
+
+        // 1193번
+        
+
     }
 }
