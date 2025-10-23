@@ -139,6 +139,34 @@ public class Main{
         br.close();
 
         // 1193번
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int X = Integer.parseInt(br.readLine());
+        
+        int line = 1; // 대각선상의 칸 개수
+        int sum = 0; // 직전의 대각선상의 칸의 합
+        
+        while(true){
+            if(X <= sum + line){
+                if(line % 2 == 1){ // 홀수
+                    // 분자는 큰 수부터 시작
+                    // 분자는 대각선상의 칸 개수 - (주어진 값(X) - 직전 대각선 칸의 합 - 1) <- 왜 이럴까?
+                    // 분모는 주어진 값(X) - 직전 대각선 칸의 합
+                    System.out.println((line - (X - sum - 1)) + "/" + (X - sum));
+                    break;
+                }else{ // 짝수
+                    // 홀수와 반대로 작성하면 됨.
+                    System.out.println((X - sum) + "/" + (line - (X - sum - 1)));
+                    break;
+                }
+            }else{
+                sum += line;
+                line++;
+            }
+        }
+        br.close();
+
+        // 2869번
+
         
 
     }
