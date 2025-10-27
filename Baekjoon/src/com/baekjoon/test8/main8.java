@@ -166,8 +166,27 @@ public class Main{
         br.close();
 
         // 2869번
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
+        int A = Integer.parseInt(st.nextToken()); // 오르는 길이
+        int B = Integer.parseInt(st.nextToken()); // 떨어지는 길이
+        int V = Integer.parseInt(st.nextToken()); // 최종 목표 길이
+        
+        if(V <= A){
+            System.out.println(1);
+            br.close();
+            return;
+        }
+        
+        int A1 = A - B; // 하루에 올라가는 양
+        int B1 = V - B; // 마지막날은 안 빼니까 미리 빼놓기
+        int days = B1 / A1;
+
+        if(B1 % A1 != 0){ // 궁금한 게 이렇게 될 경우 소수점이 나오면 결과값은 정수로 그냥 출력되나?
+            days++;
+        }
+        System.out.println(days); // int로 적어놔서 소수점은 그냥 알아서 삭제되는 거였다~
     }
 }
