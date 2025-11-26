@@ -84,7 +84,70 @@ public class Main{
         br.close();
 
 
-        // 1978번
+        // 1978번-1
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine()); // 첫 자연수
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int isPrime; // 소수를 알아내는 코드이름인데 boolean을 안 쓰고 하는 걸 가져와봄.
+        int count = 0; // 출력할 소수 합.
+        
+        for(int i=0; i<N; i++){
+            isPrime = Integer.parseInt(st.nextToken()); // 두 번째 수
+            for(int j=2; j<=isPrime; j++){ // 소수 계산하는 향상문, 2부터 시작.
+                if(j==isPrime){ // j값과 두 번째 수가 같은 값이 소수.
+                    count++;    // 이때만 출력++
+                }
+                if(isPrime%j==0){    // 두 번째 수를 j로 나눴을 때 소수가 아니기 때문에 다시 향상문으로.
+                    break;
+                }
+            }
+        }
+        System.out.println(count); // 출력
+        br.close();
+
+        // 1978번-2 (대규모 작업 시, boolean으로 소수를 따로 구별)
+        /*
+        import java.io.*;
+        import java.util.*;
+
+        public class Main {
+
+            // public ❌
+            // static ❌
+            // → 일반 인스턴스 메서드
+            boolean isPrime(int n) {
+                if (n < 2) return false;
+
+                for (int i = 2; i * i <= n; i++) {
+                    if (n % i == 0) return false;
+                }
+
+                return true;
+            }
+
+            public static void main(String[] args) throws IOException {
+
+                BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+                int N = Integer.parseInt(br.readLine());
+                StringTokenizer st = new StringTokenizer(br.readLine());
+
+                int count = 0;
+
+                // ⭐ non-static 메서드를 쓰기 위해 Main 인스턴스를 만든다
+                Main m = new Main();
+
+                for (int i = 0; i < N; i++) {
+                    int num = Integer.parseInt(st.nextToken());
+                    if (m.isPrime(num)) count++;
+                }
+
+                System.out.println(count);
+                br.close();
+            }
+        }
+        */
+        
+
 
     }
 }
